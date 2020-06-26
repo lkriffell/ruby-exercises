@@ -6,7 +6,7 @@ class AardvarkTest < Minitest::Test
   def test_it_exists
     art = Aardvark.new("Art")
     assert_instance_of Aardvark, art
-  end
+  end 
 
   def test_it_has_a_name
     art = Aardvark.new("Art")

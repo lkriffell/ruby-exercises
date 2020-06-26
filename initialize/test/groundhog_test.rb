@@ -15,7 +15,7 @@ class GroundhogTest < Minitest::Test
 
   def test_it_can_change_names
     gabby = Groundhog.new("Gabby")
-    gabby.name = "Gary"
+    gabby.change_name("Gary")
     assert_equal "Gary", gabby.name
   end
 end
