@@ -14,55 +14,78 @@ class MapPatternTest < Minitest::Test
   end
 
   def test_doubles
-    skip
     numbers = [1, 2, 3, 4, 5]
     doubles = []
     numbers.each do |number|
       # Your code goes here
+      doubles << number * 2
     end
     assert_equal [2, 4, 6, 8, 10], doubles
   end
 
   def test_squares
-    skip
     numbers = [1, 2, 3, 4, 5]
     squares = []
     # Your code goes here
+    numbers.each do |num|
+      squares << num * num
+    end
     assert_equal [1, 4, 9, 16, 25], squares
   end
 
   def test_lengths
-    skip
     names = ["alice", "bob", "charlie", "david", "eve"]
+    lengths = []
     # Your code goes here
+    names.each do |name|
+        lengths << name.length
+      end
     assert_equal [5, 3, 7, 5, 3], lengths
   end
 
   def test_normalize_zip_codes
-    skip
     numbers = [234, 10, 9119, 38881]
+    zip_codes = []
     # Your code goes here
+    numbers.each do |num|
+      num = num.to_s
+      correction = 5 - num.length
+      while correction > 0 do
+        num.prepend("0")
+        correction = correction - 1
+      end
+      zip_codes << num
+    end
     assert_equal ["00234", "00010", "09119", "38881"], zip_codes
   end
 
   def test_backwards
-    skip
     names = ["alice", "bob", "charlie", "david", "eve"]
+    backwards = []
     # Your code goes here
+    names.each do |name|
+      backwards << name.reverse
+    end
     assert_equal ["ecila", "bob", "eilrahc", "divad", "eve"], backwards
   end
 
   def test_words_with_no_vowels
-    skip
     words = ["green", "sheep", "travel", "least", "boat"]
+    without_vowels = []
     # Your code goes here
+    words.each do |word|
+      without_vowels << word.gsub(/[aeoiu]/, 'e' => '', 'o' => '', 'i' => '', 'a'  => '', 'u' => '')
+    end
     assert_equal ["grn", "shp", "trvl", "lst", "bt"], without_vowels
   end
 
   def test_trim_last_letter
-    skip
     animals = ["dog", "cat", "mouse", "frog", "platypus"]
+    trimmed = []
     # Your code goes here
+    animals.each do |animal|
+      trimmed << animal.chop
+    end
     assert_equal ["do", "ca", "mous", "fro", "platypu"], trimmed
   end
 
