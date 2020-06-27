@@ -5,13 +5,13 @@ class Baby
   end
 
   def nap
-    tired = false
+    @tired = false
   end
 
   def tired?
-    if tired == true
+    if @tired == true
       "The baby is tired."
-    elsif tired == false
+    elsif @tired = false
       "Naps help combat drowsiness."
     end
   end
