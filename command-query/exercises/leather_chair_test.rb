@@ -16,5 +16,4 @@ class LeatherChairTest < Minitest::Test
     chair.expose_to_sunlight
     assert chair.faded?, "Exposed chairs are faded."
   end
-
 end
